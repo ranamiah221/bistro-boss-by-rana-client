@@ -9,13 +9,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar fixed z-10 bg-opacity-30 bg-black max-w-screen-2xl text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
+            <svg 
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -36,8 +36,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          <h2 className="text-3xl font-medium ">Bistro Boss</h2>
-          <p>Restaurant</p>
+          <h2 className="text-3xl font-medium text-white">Bistro Boss</h2>
+          <p className="text-2xl font font-medium text-white">R e s t a u r a n t</p>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
