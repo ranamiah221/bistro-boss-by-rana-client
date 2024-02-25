@@ -1,6 +1,7 @@
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
-import ExtraSection from "../ExtraSection/ExtraSection";
+import PopularMenu from "../PopularMenu/PopularMenu";
+
 
 
 
@@ -9,7 +10,9 @@ const Home = () => {
         <div>
             <Banner></Banner> 
             <Category></Category>
-            <ExtraSection></ExtraSection>
+            {/* extra section hobe... */}
+            <PopularMenu></PopularMenu>
+            
         </div>
     );
 };
