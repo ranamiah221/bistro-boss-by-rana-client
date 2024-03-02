@@ -25,21 +25,14 @@ const Menu = () => {
         <title>Bistro Boss | Menu</title>
       </Helmet>
       {/*  */}
-      <Cover img={menuImg} title='our menu'></Cover>
+      <Cover img={menuImg} title='menu'></Cover>
       <SectionTitle subHeader='do not miss' header='todays offer'></SectionTitle>
-      <MenuCategory items={offered}></MenuCategory>
+      <MenuCategory items={offered} ></MenuCategory>
 
-      <Cover img={dessertImg} title='our dessert items'></Cover>
-      <MenuCategory items={dessert}></MenuCategory>
-
-      <Cover img={pizzaImg} title='our pizza'></Cover>
-      <MenuCategory items={pizza}></MenuCategory>
-
-      <Cover img={saladImg} title='our salad'></Cover>
-      <MenuCategory items={salad}></MenuCategory>
-      
-      <Cover img={soupImg} title='our soup'></Cover>
-      <MenuCategory items={soup}></MenuCategory>
+      <MenuCategory items={dessert} img={dessertImg} title='dessert'></MenuCategory>
+      <MenuCategory items={pizza} img={pizzaImg} title='pizza' ></MenuCategory>
+      <MenuCategory items={salad} img={saladImg} title='salad'></MenuCategory>
+      <MenuCategory items={soup} img={soupImg} title='soup'></MenuCategory>
         
     </div>
   );
