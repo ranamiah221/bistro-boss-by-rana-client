@@ -18,20 +18,17 @@ const Order = () => {
     const drinks= menu.filter(item=> item.category==='drinks')
     const pizza= menu.filter(item=> item.category==='pizza')
   
-    
-    
   return (
     <div>
       <Cover img={coverImg} title="order food"></Cover>
-      <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList>
+       <div className="mt-10 ">
+       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+        <TabList style={{textAlign: "center", color: 'black', fontSize:'20px',fontWeight:'700', width:'500px', margin: 'auto'}}>
           <Tab>Salad</Tab>
           <Tab>Pizza</Tab>
           <Tab>Soup</Tab>
           <Tab>Desserts</Tab>
           <Tab>Drinks</Tab>
-          
-
          
         </TabList>
         <TabPanel>
@@ -51,6 +48,7 @@ const Order = () => {
         </TabPanel>
         
       </Tabs>
+       </div>
     </div>
   );
 };
