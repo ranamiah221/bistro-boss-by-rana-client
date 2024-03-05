@@ -23,7 +23,9 @@ const Navbar = () => {
      <li> <NavLink to="/menu">Our Menu</NavLink> </li>
      <li> <NavLink to="/order/salad">Order Food</NavLink> </li>
     {
-      user? <><button className="btn-outline text-white px-2 rounded-lg" onClick={handleLogOut}>Log Out</button></>:
+      user? <>
+      <span>{user?.displayName}</span>
+      <button className="btn-outline text-white px-2 rounded-lg" onClick={handleLogOut}>Log Out</button></>:
       <><li> <NavLink to="/login">Login</NavLink> </li></>
     }
     </>
