@@ -11,6 +11,7 @@ const Login = () => {
     const navigate=useNavigate();
     const location=useLocation();
     const from=location.state?.from?.pathname || '/';
+    console.log('state in the location login page', location.state);
     useEffect(()=>{
         loadCaptchaEnginge(6);
     },[])
@@ -77,7 +78,8 @@ const Login = () => {
                 
               </div>
               <div className="form-control mt-6">
-                <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                {/* Todo apply disabled on recaptcha */}
+                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
               </div>
             </form>
             <p>New Here ! <small>Create an new account please  </small><Link to='/signUp' className='text-blue-500 font-medium text-base'>Sign Up</Link></p>
