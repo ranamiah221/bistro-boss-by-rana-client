@@ -18,7 +18,7 @@ const Dashboard = () => {
                     <li><NavLink to='/order/salad'> <FaSearch></FaSearch>Menu</NavLink></li>
                   </ul>
             </div>
-            <div className="flex-1 p-8">
+            <div className="flex-1 p-4">
                 <Outlet></Outlet>
             </div>
         </div>
