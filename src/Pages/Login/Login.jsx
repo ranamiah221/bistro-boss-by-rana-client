@@ -4,6 +4,7 @@ import { AuthContext } from '../component/Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { Navigate } from 'react-router-dom';
+import SocialLogin from '../component/SocialLogin/SocialLogin';
 const Login = () => {
     
     const [disabled, setDisabled]=useState(true);
@@ -82,7 +83,8 @@ const Login = () => {
                 <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
               </div>
             </form>
-            <p>New Here ! <small>Create an new account please  </small><Link to='/signUp' className='text-blue-500 font-medium text-base'>Sign Up</Link></p>
+            <p className='p-8'>New Here ! <small>Create an new account please  </small><Link to='/signUp' className='text-blue-500 font-medium text-base'>Sign Up</Link></p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

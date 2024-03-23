@@ -3,12 +3,15 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from './../component/Provider/AuthProvider';
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../component/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
   const navigate=useNavigate();
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const{createUser, updateUserProfile}=useContext(AuthContext);
+  const axiosPublic =useAxiosPublic();
   const onSubmit = data =>{
     console.log(data);
     createUser(data.email, data.password)
@@ -17,16 +20,28 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
       .then(()=>{
-           console.log('user profile updated now')
-           reset();
-           Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "User created successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          navigate('/');
+           const userInfo={
+            name:data.name,
+            email:data.email,
+           
+           }
+            axiosPublic.post('/users',userInfo)
+            .then(res=>{
+              console.log('user added the database');
+              if(res.data.insertedId){
+                reset();
+                Swal.fire({
+                 position: "top-end",
+                 icon: "success",
+                 title: "User created successfully",
+                 showConfirmButton: false,
+                 timer: 1500
+               });
+               navigate('/');
+              }
+              
+            })
+          
       })
       .catch((error)=>{
         console.log(error);
@@ -75,6 +90,7 @@ const SignUp = () => {
               </div>
             </form>
             <p className="pl-10 mb-10">Already you have an account please  <Link className="text-blue-600 text-base font-medium" to='/login'>Login</Link></p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
